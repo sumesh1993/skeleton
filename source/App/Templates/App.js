@@ -5,7 +5,8 @@ import { observer } from 'Services/Model';
 import { DB, Api, Page, Event, Route } from 'Services';
 
 import DrawerLayout from 'react-native-drawer-layout'
-import { StatusBar, Navigator, View} from 'react-native';
+import { StatusBar, View} from 'react-native';
+import NavigationExperimental from 'react-native-deprecated-custom-components';
 
 
 import Menu from 'Templates/Menu';
@@ -61,7 +62,7 @@ export default class App extends Page {
         renderNavigationView={()=>{return <Menu />}}
         >
 
-         <Navigator renderScene={Event.get('route.init')} configureScene={Event.get('route.transition')}/>
+         <NavigationExperimental.Navigator renderScene={Event.get('route.init')} configureScene={Event.get('route.transition')}/>
 
          <View style={{position:'absolute', bottom:0, left:0, right:0, height:40}}>
              <SnackBar visible={State.snackbar.show} message={State.snackbar} onPress={Event.get('snackbar.hide')} />

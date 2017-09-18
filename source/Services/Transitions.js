@@ -1,8 +1,7 @@
 'use strict';
 
-import React, {
-    Navigator
-} from 'react-native';
+import React from 'react-native';
+import NavigationExperimental from 'react-native-deprecated-custom-components';
 
 import buildStyleInterpolator from 'buildStyleInterpolator';
 
@@ -15,7 +14,7 @@ var NoTransition = {
 
 const Transitions = {
     NONE: {
-        ...Navigator.SceneConfigs.FadeAndroid,
+        ...NavigationExperimental.Navigator.SceneConfigs.FadeAndroid,
         gestures: null,
         defaultTransitionVelocity: 1000,
         animationInterpolators: {
@@ -24,10 +23,10 @@ const Transitions = {
         }
     },
 
-    FROMRIGHT: Navigator.SceneConfigs.PushFromRight,
-    FROMBOTTOM: Navigator.SceneConfigs.FloatFromBottom,
+    FROMRIGHT: NavigationExperimental.Navigator.SceneConfigs.PushFromRight,
+    FROMBOTTOM: NavigationExperimental.Navigator.SceneConfigs.FloatFromBottom,
     NoBackSwipe: {
-      ...Navigator.SceneConfigs.PushFromRight,
+      ...NavigationExperimental.Navigator.SceneConfigs.PushFromRight,
         gestures: {
           pop: {},
         }
